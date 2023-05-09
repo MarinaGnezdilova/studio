@@ -1,0 +1,66 @@
+@font-face {
+  src: url(../font/Inter-Regular.woff2) format("woff2"),
+    url(../font/Inter-Regular.woff) format("woff");
+  font-family: "Inter";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url(../font/Inter-Black.woff2) format("woff2"),
+    url(../font/Inter-Black.woff) format("woff");
+  font-family: "Inter";
+  font-weight: 900;
+}
+
+@font-face {
+  src: url(../font/Inter-Bold.woff2) format("woff2"),
+    url(../font/Inter-Bold.woff) format("woff");
+  font-family: "Inter";
+  font-weight: 700;
+}
+
+@font-face {
+  src: url(../font/Nickainley-Normal.woff) format("woff"),
+    url(../font/Nickainley-Normal.woff2) format("woff2");
+  font-family: "Nickainley";
+  font-weight: 400;
+}
+
+@font-face {
+  src: url(../font/flower-normal.woff) format("woff"),
+    url(../font/flower-normal.woff2) format("woff2");
+  font-family: "Flower";
+  font-weight: 400;
+}
+
+
+@font-face {
+  src: url(../font/flower-rus-bold.woff) format("woff"),
+    url(../font/flower-rus-bold.woff2) format("woff2");
+  font-family: "FlowerBlold";
+  font-weight: 700;
+}
+
+
+@font-face {
+  src: url(../font/lemon-tuesday.woff) format("woff"),
+    url(../font/lemon-tuesday.woff2) format("woff2");
+  font-family: "Lemon";
+  font-weight: 400;
+}
+
+
+@font-face {
+  src: url(../font/nexa-script.woff) format("woff"),
+    url(../font/nexa-script.woff2) format("woff2");
+  font-family: "Nexa";
+  font-weight: 400;
+}
+
+
+@font-face {
+  src: url(../font/nexa-script-light.woff) format("woff"),
+    url(../font/nexa-script-light.woff2) format("woff2");
+  font-family: "NexaLight";
+  font-weight: 300;
+}
