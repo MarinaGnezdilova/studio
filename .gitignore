@@ -1,16 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/keramika-site-studio_backend/node_modules
-/keramika-site-studio_front/node_modules
-/keramika-site-studio_backend/.pnp
+/backend/node_modules
+/front/node_modules
+/backend/.pnp
 
 # testing
 /coverage
 
 # production
-/keramika-site-studio_front/build
+/front/build
 
 # misc
-/keramika-site-studio_backend/.env
+/backend/.env
 

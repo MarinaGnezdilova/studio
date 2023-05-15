@@ -11,7 +11,7 @@ const {
   patchUserProfile,
   getUserInfo,
   deleteUser,
-  postUser,
+  /*postUser,*/
 } = require('../controllers/user');
 
 const {
@@ -34,13 +34,13 @@ const {
 const regex = /^https?:\/\/[a-z0-9~_\-\.]+\.[a-z]{2,9}([a-z0-9\[\]\#\-\.\_\~\/\?\@\!\$\&\'\(\)\*\+\,\;\:\=]*)?$/i;
 const regexEmail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
 
-router.post('/signup', celebrate({
+/*router.post('/signup', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().pattern(regexEmail),
     password: Joi.string().required(),
     name: Joi.string().required().min(2).max(30),
   }),
-}), postUser);
+}), postUser);*/
 router.post('/schedule', celebrate({
   body: Joi.object().keys({
     title: Joi.string().required(),

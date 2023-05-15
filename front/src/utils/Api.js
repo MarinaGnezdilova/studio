@@ -227,6 +227,6 @@ class Api {
 
 
 export const api = new Api(
-  "http://localhost:3001"
+  "http://api.happy-keramika.ru/"
   );
   

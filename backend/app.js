@@ -13,7 +13,7 @@ const { celebrate, Joi } = require('celebrate');
 const helmet = require('helmet');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
-const { login } = require('./controllers/user');
+const { login, postUser } = require('./controllers/user');
 const { auth } = require('./middlewares/auth');
 const NotFoundError = require('./errors/not-found-err');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
@@ -66,6 +66,13 @@ app.post('/certificate', celebrate({
   }),
 }), postCertificate);
 app.get('/month', getMonth);
+app.post('/signup', celebrate({
+  body: Joi.object().keys({
+    email: Joi.string().required().pattern(regexEmail),
+    password: Joi.string().required().min(5).max(30),
+    name: Joi.string().required().min(2).max(30),
+  }),
+}), postUser);
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().pattern(regexEmail),

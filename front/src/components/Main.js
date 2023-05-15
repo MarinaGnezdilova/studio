@@ -158,7 +158,7 @@ function handleCloseSuccessPopup() {
       </header>
     <page>
    
-      <section className="about-studio-section">
+      <section className="about-studio-section" id="about-studio">
         <div className="about-studio-main-block">
         <h1 className="about-studio-section__title">happy keramika</h1>
         <h2 className="about-studio-section__title-italic">студия керамики</h2>

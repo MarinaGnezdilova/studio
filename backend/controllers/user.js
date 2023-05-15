@@ -23,9 +23,10 @@ module.exports.postUser = (req, res, next) => {
       password: hash,
     })
       .then((data) => res.status(CREATED).send({
-        id: data._id, email: data.email,  name: data.name,
+        id: data._id, email: data.email, name: data.name,
       }))
       .catch((e) => {
+        console.log(e);
         if (e.name === 'ValidationError') {
           next(new BadRequest('Данные для создания нового пользователя были переданы некорректно.'));
         } else if (e.code === 11000) {
