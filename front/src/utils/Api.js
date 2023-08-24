@@ -1,6 +1,7 @@
 class Api {
-    constructor(baseUrl) {
+    constructor(baseUrl, tgUrl) {
       this._baseUrl = baseUrl;
+      this._tgUrl = tgUrl;
     }
     _checkResponse(res) {
       if (res.ok) {
@@ -222,11 +223,27 @@ class Api {
         }),
       }).then(this._checkResponse);
     }
+
+    sendTgMessagge( message) {
+      return fetch( `${this._tgUrl}`, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ 
+            chat_id: -1001827464517,
+            text: message,
+           }), 
+      }).then(this._checkResponse);
+  }
 }
 
 
 
 export const api = new Api(
-  "http://api.happy-keramika.ru/"
+  "https://api.happy-keramika.ru",
+  //"http://localhost:3001",
+  "https://api.telegram.org/bot6382149210:AAEhdE8DNmWbebVzMn-idF9WrhaK-JcheBU/sendMessage"
   );
   

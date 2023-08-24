@@ -25,12 +25,19 @@ function Popup(props) {
  const isService = `popup__title-mk ${props.isService ? "popup__title-mk_hidden":""}`;
 
  React.useEffect(() => {
-  if (props.currentService === 'Групповой МК') {
-    setDateError('')
+  console.log(1);
+  console.log(props.currentService);
+  if (props.currentService === 'Расписание') {
+    setDateError('');
+    setDate(props.currentDate);
   }
- }, []);
+ }, [props.isPopupOpen]);
 
  React.useEffect( () => {
+  console.log(nameError);
+  console.log(dateError);
+  console.log(amountError);
+  console.log(telError);
   if (nameError || dateError || amountError || telError) {
     setFormValid(false)
   } else {
@@ -40,7 +47,6 @@ function Popup(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    
     props.onAddLid({
       name: name,
       tel: tel,
@@ -56,6 +62,11 @@ function Popup(props) {
     setTel('');
     setDate('');
     props.OnClosePopup();
+    setFormValid(false);
+    setNameError('Имя не может быть пустым');
+    setTelError('Телефон не может быть пустым');
+    setAmountError('Количество не может быть пустым');
+    setDateError('Дата не может быть пустой');
   };
 
   function handleComment(e) {
@@ -125,6 +136,11 @@ function Popup(props) {
     setComment('');
     setTel('');
     setDate('');
+    setFormValid(false);
+    setNameError('Имя не может быть пустым');
+    setTelError('Телефон не может быть пустым');
+    setAmountError('Количество не может быть пустым');
+    setDateError('Дата не может быть пустой');
   }
 
   const blurHandler = (e) => {

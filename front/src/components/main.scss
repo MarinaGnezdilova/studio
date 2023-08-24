@@ -590,6 +590,18 @@ header {
   }
  }
 
+ .schedule__text {
+  @include text("Inter", 14px, 400, $black);
+  display: block;
+  width: 70%;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  @media screen and (max-width: 650px) {
+    font-size: 12px;
+  }
+  
+ }
+
  .schedule-block {
   display: grid;
   grid-template-columns: repeat(3, 350px);
@@ -1256,7 +1268,7 @@ header {
 .popup {
   position: fixed;
   width: 70%;
-  height: 400px;
+  height: fit-content;
   top: 30%;
   left: 50%;
   transform: translate(-50%);
@@ -1264,11 +1276,14 @@ header {
   border: 2px solid $grenn;
   border-radius: 8px;
   @include text ("Inter", 14px, 400, $black);
+  padding-bottom: 40px;
 }
 
 .popup_opened {
   display: none;
 }
+
+
 
 .popup__button-close {
   position: absolute;
@@ -1378,16 +1393,28 @@ header {
 }
 
 .popup__form {
-  @media screen and (max-width: 750px) {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  justify-content: space-between
+  /*@media screen and (max-width: 750px) {
     display: flex;
     padding-left: 10%;
     padding-right: 10%;
     justify-content: space-between;
-  }
+  }*/
 }
 
 .popup__row {
-  display: flex;
+  flex-direction: column;
+    width: 45%;
+    /*height: 200px;*/
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+  align-items: start;
+  justify-content: start;
+  /*display: flex;
   align-items: end;
   justify-content: space-between;
   margin-left: 10%;
@@ -1397,7 +1424,7 @@ header {
     width: 45%;
     margin-right: 0;
     margin-left: 0;
-  }
+  }*/
 }
 
 .popup__mk__select {
@@ -1416,24 +1443,24 @@ header {
 
 .popup__input {
   display: flex;
-  width: 70%;
+  width: 100%;
   height: 40px;
   border: $border;
   border-radius: 5px;
   color: $grenn;
+  margin-bottom: 20px;
   @media screen and (max-width: 750px) {
     width: 100%;
-    margin-bottom: 20px;
     font-size: 12px;
     height: 35px;
   }
 }
 
-.popup__input-amount {
+/*.popup__input-amount {
   @media screen and (max-width: 750px) {
     margin-bottom: 30px;
   }
-}
+}*/
 
 .popup__input_hidden {
   display: none;
@@ -1452,18 +1479,26 @@ header {
 }
 
 .popup__button {
-  width: 23%;
+ /* width: 23%;*/
   background-color: #A351A7;
   border: none;
   height: 40px;
   color: $white;
   cursor: pointer;
   border-radius: 5px;
-  @media screen and (max-width: 750px) {
+  width: 150px;
+  /*margin-top: 20px;*/
+ /* @media screen and (max-width: 750px) {
     width: 100%;
+  }*/
+  @media screen and (max-width: 650px) {
+    width: 100px;
+    height: 35px;
+
   }
     @media screen and (max-width: 400px) {
     font-size: 12px;
+    width: 80px;
   }
  &:disabled {
   background-color: #a291a3;
@@ -1482,10 +1517,12 @@ header {
 .popup__text {
   margin: 0;
   padding: 0;
-  width: 23%;
+  /*width: 23%;*/
   font-size: 12px;
+  width: 100%;
+
   @media screen and (max-width: 750px) {
-    width: 100%;
+    /*width: 100%;*/
     font-size: 10px;
   }
   @media screen and (max-width: 650px) {
@@ -1494,11 +1531,11 @@ header {
 }
 
 .popup__row-second {
-  align-items: end;
   margin-top: 3%;
-  @media screen and (max-width: 750px) {
+  margin-top: 0;
+  /*@media screen and (max-width: 750px) {
     margin-top: 0;
-  }
+  }*/
 }
 
 .enter {

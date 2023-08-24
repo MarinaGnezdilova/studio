@@ -65,7 +65,7 @@ function handleMKClick(mk) {
   setIsClickOnMKCard(false);
   setCurrentMK(mk.shortTitle);
   setCurrentDate(mk.date);
-  setCurrentService('Групповой МК');
+  setCurrentService('Расписание');
 }
 
 function closePopup() {
@@ -79,10 +79,17 @@ function closePopup() {
 }
 
 function handleSubmitForm(form) {
+  let message ='Заявка с сайта. ';
+    message+=`Имя отправителя: ${form.name}, Tel: ${form.tel}`;
+
   api.saveLid(form)
   .then(() => {
     SetIsSuccessPopupOpen(true);
   })
+  .catch((e) => {
+    alert("Что-то пошло не так!");
+  })
+  api.sendTgMessagge(message)
   .catch((e) => {
     alert("Что-то пошло не так!");
   })
@@ -113,10 +120,17 @@ function handleHolidayMK() {
 }
 
 function handleCertificateForm(form) {
+  let message ='Заявка с сайта. ';
+    message+=`Имя отправителя: ${form.name}, Tel: ${form.tel}`;
+
   api.saveCertificate(form)
   .then(() =>{
     SetIsSuccessPopupOpen(true);
   })
+  .catch((e) => {
+    alert("Что-то пошло не так!");
+  })
+  api.sendTgMessagge(message)
   .catch((e) => {
     alert("Что-то пошло не так!");
   })
@@ -223,6 +237,9 @@ function handleCloseSuccessPopup() {
             <h3>{month}</h3>
       </div>
       </div>
+      <p className="schedule__text">
+      Вы можете прийти к нам в студию на один из групповых мастер-классов по керамике. Есть расписание на месяц. На понравившийся мастер-класс вы можете записаться через форму на кнопке "Записаться" или по контактам указанным в шапке сайта. 
+      </p>
         <div className="schedule-block">
           {
             MKs.map((mk) => (
